@@ -1,0 +1,118 @@
+.main{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    isolation: isolate;
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    z-index: 1000;
+    color:#e7ecef;
+    backdrop-filter: blur(10px); 
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.heading{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    
+    margin-left: 10%;
+}
+.heading h1{
+    background: linear-gradient(to right, #427dca, #3f44ca);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fi{
+    font-size: 1.5rem;
+  color: #3f44ca;
+}
+.options{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.options p{
+    cursor: pointer;
+}
+.options p:hover{
+    color: #274c77;
+}
+.icon{
+    height: 80%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.buttons{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.buttons Link{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons button{
+    height: 35px;
+    width: 100px;
+    border: none;
+    color: #274c77;
+    cursor: pointer;
+}
+.buttons button:hover{
+    background-color: #274c77;
+    color: white;
+    border: none;
+}
+.scrolled{
+    background-color: #a3cef1;
+    color: white;
+}
+.scroll p:hover{
+    color: #274c77;
+}
+.scrl button:hover{
+    background-color: #274c77;
+}
+.active{
+    color: #274c77;
+}
+@media (max-width:500px) {
+
+    
+    .options{
+      
+        width: 65%;
+        font-size: 0.65rem;
+    }
+    .buttons{
+        width: 35%;
+    }
+    .buttons button{
+        width: 35%;
+        height: 30%;
+        font-size: 0.65rem;
+    }
+}

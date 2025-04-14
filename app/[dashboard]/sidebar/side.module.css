@@ -1,0 +1,109 @@
+.main{
+    height: 100vh;
+    width: 15vw;
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    border-right: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.main:focus{
+    outline: none;
+}
+.head{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.head h1{
+
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #427dca, #3f44ca);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.options{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -30%;
+}
+.feature{
+    height: 12.5%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #888;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.feature p{
+    text-align: start;
+}
+#active{
+    background: linear-gradient(to right, #427dca, #3f44ca);
+    color: white;
+}
+.buttons{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+.buttons button{
+    height: 50%;
+    width: 60%;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #427dca, #3f44ca);
+    color: white;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+.buttons button:hover{
+    transform: scale(1.1);
+}
+@media (max-width: 500px) {
+    .main{
+        left: 0vw;
+        width: 50vw;
+        justify-content: space-around;
+        background-color: #427dca;
+        z-index: 100;
+        border: none;
+    }
+    .head{
+        display: none;
+    }
+    .options{
+        margin-top: 10%;
+    }
+    .feature{
+        color: white;
+        font-size: 1rem;
+        width: 100%;
+        border-radius: 0px;
+    }
+    #active{
+        background-color: #3f44ca;background: linear-gradient(to right, #3f44ca, #3f44ca);
+        color: white;
+    }
+    .buttons button{
+        background-color: #3f44ca;background: linear-gradient(to right, #3f44ca, #3f44ca);
+        color: white;
+    }
+}
