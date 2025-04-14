@@ -170,7 +170,7 @@ export default function Home() {
                     journey? We're here to help! Whether you need technical
                     assistance, have feedback, or want expert guidance, feel
                     free to reach out. Connect with us through email or our
-                    community forum. Let’s work together to build your
+                    community forum. Let&apos;s work together to build your
                     confidence and improve your public speaking skills!{" "}
                   </p>
                 </div>
