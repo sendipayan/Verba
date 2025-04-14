@@ -167,7 +167,7 @@ export default function Home() {
                 <div className={styles.para1}>
                   <p>
                     Have questions or need support on your public speaking
-                    journey? We're here to help! Whether you need technical
+                    journey? We&apos;re here to help! Whether you need technical
                     assistance, have feedback, or want expert guidance, feel
                     free to reach out. Connect with us through email or our
                     community forum. Let&apos;s work together to build your
