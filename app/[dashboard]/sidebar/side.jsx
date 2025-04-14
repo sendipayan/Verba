@@ -19,8 +19,11 @@ export default function Side({show}) {
   const [active, setActive] = useState(0);
   const sidebar=useRef(null);
   const router = useRouter();
-  const width=window.innerWidth;
+  const [width, setWidth] = useState(null);
 
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
   const handleKey = (e) => {
     if (e.key == "ArrowDown" && active < 4) {
       setActive((prev) => prev + 1);

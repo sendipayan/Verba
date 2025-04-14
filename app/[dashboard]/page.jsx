@@ -11,7 +11,7 @@ import SpeechAnalysisChart from "../_components/graphs/barchart";
 import UserEngagementChart from "../_components/graphs/piechart";
 
 export default function Dashboard() {
-  const width=window.innerWidth;
+  
   return (
     <div className={dash.maincontent}>
       <div className={dash.head}>

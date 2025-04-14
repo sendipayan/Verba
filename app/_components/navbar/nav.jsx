@@ -8,8 +8,12 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar({ active, setActive, setNow,show,setshow }) {
   const [scrolled, setScrolled] = useState(false);
-  const width=window.innerWidth;
+  const [width, setWidth] = useState(null);
 
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY; // Current scroll position

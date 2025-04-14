@@ -3,11 +3,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import nav from "./nav.module.css"
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function Nav({name,show,setShow}){
     
-    const width=window.innerWidth;
+    const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
     
 
     return(<div className={nav.main} style={show?{filter:"blur(10px)"}:{}}>

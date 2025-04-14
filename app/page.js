@@ -102,7 +102,7 @@ export default function Home() {
                   ht={150}
                   wt={300}
                   tittle="Personalized Training"
-                  para="You will start with a short questionnaire to assess your speaking confidence. Based on your responses, you'll receive a customized learning plan tailored to your improvement needs."
+                  para="You will start with a short questionnaire to assess your speaking confidence. Based on your responses, you&apos;ll receive a customized learning plan tailored to your improvement needs."
                 />
                 <Card
                   image={img2}
@@ -139,7 +139,7 @@ export default function Home() {
                   ht={150}
                   wt={300}
                   tittle="Progress Tracking"
-                  para="Track your improvement with recorded sessions, performance analytics, and personalized reports. You'll see measurable growth in your confidence and public speaking skills over time."
+                  para="Track your improvement with recorded sessions, performance analytics, and personalized reports. You&apos;ll see measurable growth in your confidence and public speaking skills over time."
                 />
               </div>
             </div>
