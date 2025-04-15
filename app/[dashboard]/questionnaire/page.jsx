@@ -61,6 +61,7 @@ export default function Questionnaire() {
         
         if (res.ok) {
           alert("Questionnaire submitted successfully!");
+          setIsSubmitted(true);
           
         } else {
           alert("Failed to submit questionnaire.");
