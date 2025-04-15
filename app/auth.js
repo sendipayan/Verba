@@ -6,6 +6,7 @@ import { User } from "./lib/model/user";
 
 export const { handlers, auth } = NextAuth({
   providers: [Google],
+  secret: process.env.AUTH_SECRET,
   callbacks: {
     async signIn({ user, account }) {
       
@@ -16,7 +17,7 @@ export const { handlers, auth } = NextAuth({
           const userexists = await User.findOne({ email });
 
           if (!userexists) {
-            const res = await fetch("http://localhost:3000/api/users", {
+            const res = await fetch("https://verba-zxie.vercel.app/api/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
