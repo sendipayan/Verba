@@ -13,14 +13,22 @@ import { useEffect, useState } from "react";
 export default function DashboardLayout({children}) {
   const { data: session, status } = useSession();
   const [show,setShow]=useState(0)
- 
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
+  useEffect(()=>{
+    console.log(width)
+  },[width])
     
   if(status==="loading")  return(<Loading/>);
   
   return(<div className={dash.main}>
       <Nav name={session.user.name} show={show} setShow={setShow} />
       <Side show={show} setShow={setShow}/>
-      <div className={dash.content} onClick={()=>setShow(0)} style={show?{filter:"blur(10px)"}:{}}>
+      <div className={dash.content} onClick={()=>{if(width<500)setShow(0)}} style={show?{filter:"blur(10px)"}:{}}>
         {children}
       </div>
   </div>);

@@ -17,7 +17,7 @@ export const { handlers, auth } = NextAuth({
           const userexists = await User.findOne({ email });
 
           if (!userexists) {
-            const res = await fetch("https://verba-zxie.vercel.app/api/users", {
+            const res = await fetch("/api/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

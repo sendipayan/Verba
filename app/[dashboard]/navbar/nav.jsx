@@ -16,7 +16,7 @@ export default function Nav({name,show,setShow}){
 
     return(<div className={nav.main} style={show?{filter:"blur(10px)"}:{}}>
         {width<500?<div className={nav.logo}>
-                <FontAwesomeIcon icon={faBars} onClick={()=>setShow(1)} color="#427dca"/>
+                <FontAwesomeIcon icon={faBars} onClick={()=>{if(width<500)setShow(1)}} color="#427dca"/>
                 <h1>Verba</h1>
         </div>:<></>}
             <div className={nav.details}>

@@ -54,13 +54,16 @@ export default function Side({show}) {
   }, [active]);
 
   useEffect(()=>{
-    if(show){
-      sidebar.current.style.display="flex";
-    }
+    
     if(!show && width<500){
       sidebar.current.style.display="none";
     }
-  },[show])
+    else{
+      sidebar.current.style.display="flex";
+    
+    }
+    
+  },[show,width])
 
   
   
