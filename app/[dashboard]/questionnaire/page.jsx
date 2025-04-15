@@ -53,7 +53,7 @@ export default function Questionnaire() {
         userId: session.user.email, 
       };
       try {
-        const res = await fetch("/api/submit-answers", {
+        const res = await fetch("https://verba-dip.vercel.app/api/submit-answers", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
@@ -81,7 +81,7 @@ export default function Questionnaire() {
    const finduser=async()=>{
 
     try{
-        const res = await fetch("/api/finduser", {
+        const res = await fetch("https://verba-dip.vercel.app/api/finduser", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ userId: session.user.email }),
