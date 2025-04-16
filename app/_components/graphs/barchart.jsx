@@ -14,7 +14,7 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const SpeechAnalysisChart = () => {
-  const width = window.innerWidth;
+  
   const data = {
     labels: ["Clarity", "Pauses", "Filler Words", "Volume", "Speed"],
     datasets: [

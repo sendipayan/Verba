@@ -1,4 +1,4 @@
-import load from "./load.module.css"
+import load from "./load1.module.css"
 
 
 export default function Loading(){

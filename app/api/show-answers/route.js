@@ -11,11 +11,7 @@ export  async function POST(request) {
     }
 
     if (mongoose.connection.readyState !== 1) {
-      await mongoose.connect(connectionSrt, {
-        dbName: "public_speaking",
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
+      await mongoose.connect(connectionSrt);
     }
 
     const question = await Questionnaire.findOne({ userId });

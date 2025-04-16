@@ -19,14 +19,12 @@ export default function DashboardLayout({children}) {
     setWidth(window.innerWidth);
   }, []);
 
-  useEffect(()=>{
-    console.log(width)
-  },[width])
-    
+  
+
   if(status==="loading")  return(<Loading/>);
   
   return(<div className={dash.main}>
-      <Nav name={session.user.name} show={show} setShow={setShow} />
+      <Nav name={session?.user.name} show={show} setShow={setShow} />
       <Side show={show} setShow={setShow}/>
       <div className={dash.content} onClick={()=>{if(width<500)setShow(0)}} style={show?{filter:"blur(10px)"}:{}}>
         {children}
