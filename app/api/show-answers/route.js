@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { connectionSrt } from "@/app/lib/db";
 import { Questionnaire } from "@/app/lib/model/questionnaire";
 
-export default async function POST(request) {
+export  async function POST(request) {
   try {
     const { userId } = await request.json();
 
