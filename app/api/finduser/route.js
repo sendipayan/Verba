@@ -3,7 +3,7 @@ import { connectionSrt } from "@/app/lib/db";
 import { Questionnaire } from "@/app/lib/model/questionnaire";
 
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "http://localhost:3000", 
+  "Access-Control-Allow-Origin": "http://localhost:3000",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
@@ -21,24 +21,33 @@ export const POST = async (req) => {
     if (!exists) {
       return new Response(
         JSON.stringify({ success: false, message: "No questionnaire found" }),
-        { status: 404 }
+        {
+          status: 404,
+          headers: corsHeaders, 
+        }
       );
     }
 
-    // ✅ Return the existing questionnaire
     return new Response(
       JSON.stringify({ success: true, data: exists }),
-      { status: 200 }
+      {
+        status: 200,
+        headers: corsHeaders, 
+      }
     );
 
   } catch (error) {
     console.error("User Find Error:", error);
     return new Response(
       JSON.stringify({ success: false, error: "Failed to find questionnaire" }),
-      { status: 500 }
+      {
+        status: 500,
+        headers: corsHeaders, 
+      }
     );
   }
 };
+
 export const OPTIONS = async () => {
   return new Response(null, {
     status: 204,
