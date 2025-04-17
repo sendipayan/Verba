@@ -2,6 +2,12 @@ import mongoose from "mongoose";
 import { connectionSrt } from "@/app/lib/db";
 import { Questionnaire } from "@/app/lib/model/questionnaire";
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "http://localhost:3000", 
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
 export const POST = async (req) => {
   const { userId } = await req.json();
 
@@ -32,4 +38,10 @@ export const POST = async (req) => {
       { status: 500 }
     );
   }
+};
+export const OPTIONS = async () => {
+  return new Response(null, {
+    status: 204,
+    headers: corsHeaders,
+  });
 };
