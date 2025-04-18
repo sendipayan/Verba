@@ -1,5 +1,3 @@
-// app/api/feedback/route.ts
-
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -30,7 +28,7 @@ Transcript:
         Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-4",
+        model: "gpt-3.5",
         messages: [{ role: "user", content: prompt }],
         temperature: 0.7,
       }),
@@ -42,8 +40,12 @@ Transcript:
       return NextResponse.json({ error: data.error.message }, { status: 500 });
     }
 
-    return NextResponse.json({ feedback: data.choices[0].message.content });
+    // Check the response format (ensure the structure is compatible with the OpenAI version you're using)
+    const feedback = data.choices[0].message ? data.choices[0].message.content : data.choices[0].text;
+
+    return NextResponse.json({ feedback });
   } catch (error) {
+    console.error("Error fetching feedback:", error);
     return NextResponse.json({ error: "Server error while fetching feedback." }, { status: 500 });
   }
 }
