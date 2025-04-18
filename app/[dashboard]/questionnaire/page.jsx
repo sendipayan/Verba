@@ -5,6 +5,7 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import ques from "./quest.module.css";
 import { set } from "mongoose";
+import Loading from "../loading";
 
 export default function Questionnaire() {
 
@@ -12,6 +13,7 @@ export default function Questionnaire() {
     const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState(Array(5).fill(""));
+  const [loading, setLoading] = useState(true);
  
   const questions = [
     "Q1. How confident are you when speaking in public?",
@@ -89,15 +91,20 @@ export default function Questionnaire() {
           });
           if (res.ok){
             setIsSubmitted(true);
+            setLoading(false);
           }
              else {
             setIsSubmitted(false);
+            setLoading(false);
           }
     }catch(err){
         alert("Something went wrong!");
         console.error(err);
+        setLoading(false);
     }
   }
+
+  if(loading) return <Loading/>
 
   return (
     <div className={ques.main}>

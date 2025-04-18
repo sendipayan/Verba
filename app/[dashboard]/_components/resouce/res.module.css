@@ -1,0 +1,50 @@
+.main{
+    height: 20%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    cursor: pointer;
+}
+.first{
+    height: 100%;
+    width:20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.icon{
+    height: 50%;
+    width: 40%;
+    display: flex;
+    align-items: center;;
+    justify-content: center;
+    background-color: #427dca;
+    border-radius: 50%;
+}
+.content{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.main:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    
+}
+@media (max-width: 500px) {
+    .main{
+        height: 15%;
+        width: 90%;
+    }
+    .icon{
+        height: 40px;
+        width: 40px;
+    }
+}
