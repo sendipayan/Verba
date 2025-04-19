@@ -189,7 +189,7 @@ export default function Speech() {
   const response = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://verba-dip.vercel.app/api/feedback", {
+      const res = await fetch("https://verba-dip.vercel.app/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ transcript }),
