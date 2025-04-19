@@ -6,6 +6,7 @@ import { User } from "./lib/model/user";
 
 export const { handlers, auth } = NextAuth({
   providers: [Google],
+  trustHost: true,
   secret: process.env.AUTH_SECRET,
   callbacks: {
     async signIn({ user, account }) {
