@@ -136,15 +136,16 @@
 }
 .text2{
     height: fit-content;
-    width: fit-content;
-    max-width: 60%;
+    
+    width: 70%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 10px 15px;
+    padding:15px 30px;
     margin-left: 2%;
     margin-top: 1%;
     background-color: #427dca;

@@ -56,6 +56,7 @@
     .main{
         left: 0vw;
         width: 100vw;
+        border-bottom: 2px solid #ddd;
     }
     .details{
         width: 55%;
