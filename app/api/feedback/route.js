@@ -37,7 +37,7 @@ ${transcript}
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-          "HTTP-Referer": "http://localhost:3000", // required
+          "HTTP-Referer": "https://verba-dip.vercel.app", // required
           "X-Title": "YourAppName", // required
         },
         body: JSON.stringify({
