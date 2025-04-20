@@ -229,7 +229,7 @@ export default function Speech() {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
-              "HTTP-Referer": "http://localhost:3000", // required
+              "HTTP-Referer": "https://verba-dip.vercel.app", // required
               "X-Title": "Verba", // replace with your actual app name
             },
             body: JSON.stringify({
