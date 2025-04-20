@@ -38,7 +38,7 @@ ${transcript}
           "X-Title": "Verba", // replace with your actual app name
         },
         body: JSON.stringify({
-          model: "deepseek/deepseek-r1-distill-qwen-14b:free",
+          model: "openchat/openchat-7b",
           messages: [
             {
               role: "user",
