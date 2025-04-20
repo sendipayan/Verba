@@ -11,15 +11,7 @@ export async function POST(req) {
   }
 
   const prompt = `
-You are an expert public speaking coach. Analyze the following speech transcript and provide:
-
-A score from 1 to 10 for each of the following:
-   - Clarity of communication
-   - Fluency and word choice
-   - Confidence and tone
-   - Structure and coherence
-
-
+You are an expert public speaking coach. Analyze the following speech transcript and provide a small feedback:
 Transcript:
 ${transcript}
   `;
