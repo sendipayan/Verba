@@ -118,7 +118,7 @@ export default function Speech() {
 
   useEffect(()=>{
     if(send)
-      response();
+      feed();
   },[send]);
 
   const copyToClipboard = async () => {
@@ -189,7 +189,7 @@ export default function Speech() {
   const response = async () => {
     try {
       setLoading(true);
-      const res = await fetch("https://verba-dip.vercel.app/api/feedback", {
+      const res = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ transcript }),
@@ -209,6 +209,67 @@ export default function Speech() {
       alert("Something went wrong!");
     }
   };
+
+
+  const feed= async()=>{
+    const prompt = `
+    You are an expert public speaking coach. Analyze the following speech transcript and provide a short 1 line review 
+    Transcript:
+    ${transcript}
+      `;
+    
+     
+    
+      try {
+        setLoading(true);
+        const response = await fetch(
+          "https://openrouter.ai/api/v1/chat/completions",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
+              "HTTP-Referer": "http://localhost:3000", // required
+              "X-Title": "Verba", // replace with your actual app name
+            },
+            body: JSON.stringify({
+              model: "deepseek/deepseek-r1-distill-qwen-14b:free",
+              messages: [
+                {
+                  role: "user",
+                  content: prompt,
+                },
+              ],
+            }),
+            
+          }
+        );
+    
+        
+    if(response.ok){
+        const data = await response.json();
+    
+        
+    
+        const feedback = data.choices[0].message
+          ? data.choices[0].message.content
+          : data.choices[0].text;
+          setFeedback(feedback.replace(/\n{2,}/g, "\n\n").trim());
+          setLoading(false);
+    }
+        else{
+          alert("Failed to get response.");
+          setLoading(false);
+        }
+        
+      } catch (error) {
+        console.error("Error fetching feedback:", error);
+        
+        alert("Something went wrong!");
+      }
+    }
+    
+  
 
   return (
     <div className={speech.main}>
