@@ -213,7 +213,7 @@ export default function Speech() {
 
   const feed= async()=>{
     const prompt = `
-    You are an expert public speaking coach. Analyze the following speech transcript and provide a short 1 line review 
+    You are an expert public speaking coach. Analyze the following speech transcript and provide a short feedback  
     Transcript:
     ${transcript}
       `;
