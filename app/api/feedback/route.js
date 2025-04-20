@@ -33,7 +33,7 @@ ${transcript}
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
           "HTTP-Referer": "http://localhost:3000", // required
           "X-Title": "Verba", // replace with your actual app name
         },
