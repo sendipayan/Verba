@@ -233,7 +233,7 @@ export default function Speech() {
               "X-Title": "Verba", // replace with your actual app name
             },
             body: JSON.stringify({
-              model: "deepseek/deepseek-r1-distill-qwen-14b:free",
+              model: "mistralai/mistral-7b-instruct:free",
               messages: [
                 {
                   role: "user",
